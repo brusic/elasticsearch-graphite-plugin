@@ -302,7 +302,8 @@ public class GraphiteReporter {
         sendRefreshStats(type + ".refresh", nodeIndicesStats.getRefresh());
         sendSearchStats(type + ".search", nodeIndicesStats.getSearch());
         sendFieldDataStats(type + ".fielddata", nodeIndicesStats.getFieldData());
-    }
+		sendMergeStats(type + ".merge", nodeIndicesStats.getMerge());
+	}
 
     private void sendSearchStats(String type, SearchStats searchStats) {
         SearchStats.Stats totalSearchStats = searchStats.getTotal();
